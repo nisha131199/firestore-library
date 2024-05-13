@@ -1,0 +1,6 @@
+/build
+
+.idea/
+.build
+.gradle/
+build/
