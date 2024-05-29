@@ -91,4 +91,15 @@ class FireStoreUtil {
         }
         return "$user2ID-$user1ID"
     }
+
+    fun deleteImageFromStorage(path: String?) {
+        path?.let {
+            val photoRef = FirebaseStorage.getInstance().getReferenceFromUrl(path)
+            photoRef.delete().addOnSuccessListener {
+                Log.e("Firebase", "deleteImageFromStorage: ho gai")
+            }.addOnFailureListener {
+                Log.e("Firebase", "deleteImageFromStorage: nai hoi")
+            }
+        }
+    }
 }
